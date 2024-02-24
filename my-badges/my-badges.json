@@ -131,5 +131,12 @@
     "desc": "I am a polite coder.",
     "body": "I use words like \"thanks\" and \"please\" in my issues:\n\n- <a href=\"https://github.com/awsmug/torro-forms/issues/387\">#387</a>: Feature Request: Multiple Choice element with Text input (\"other\")\n- <a href=\"https://github.com/humanmade/page-for-post-type/issues/13\">#13</a>: Show notice if none of the post type has archive enabled\n- <a href=\"https://github.com/advancedforms/advanced-forms/issues/39\">#39</a>: Prepare for use of GlotPress to handle translations.\n- <a href=\"https://github.com/awsmug/torro-forms/issues/476\">#476</a>: Feature request: Add Gutenberg support, add blocks\n- <a href=\"https://github.com/deliciousbrains/wp-migrate-db-anonymization/issues/29\">#29</a>: Generated fake data not unique for larger databases\n\n And many more...",
     "image": "https://github.com/my-badges/my-badges/blob/master/src/all-badges/polite-coder/polite-coder.png?raw=true"
+  },
+  {
+    "id": "morning-commits",
+    "tier": 0,
+    "desc": "I commit in the morning.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/d600a302396b198090699b438deb0726272c8f34\">d600a30</a>\n- <a href=\"https://github.com/tyrann0us/tinymce-clear-buttons/commit/df0ab23197c6753fde40db5fb8f37b24f5d6204c\">df0ab23</a>\n- <a href=\"https://github.com/tyrann0us/tinymce-clear-buttons/commit/d2a721ad06648911475b4da14cfac636494d7136\">d2a721a</a>\n- <a href=\"https://github.com/tyrann0us/tinymce-clear-buttons/commit/01ed8f273ecee8e52593e9b73d74779338ef0353\">01ed8f2</a>\n- <a href=\"https://github.com/tyrann0us/tinymce-clear-buttons/commit/ce0e74d749405fa5ff2823bf8b783f110d8d2202\">ce0e74d</a>\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/977905a417998fa5564b7192cbb68b799aa6ff76\">977905a</a>",
+    "image": "https://github.com/my-badges/my-badges/blob/master/src/all-badges/time-of-commit/morning-commits.png?raw=true"
   }
 ]
