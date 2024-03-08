@@ -9,6 +9,7 @@ Issues:
 - <a href="https://github.com/brightnucleus/custom-content/issues/9">#9</a>: German translation differ from core
 - <a href="https://github.com/ahmedkaludi/Easy-Table-of-Contents/issues/129">#129</a>: Feature request: Add toggle state class to container
 - <a href="https://github.com/inpsyde/php-coding-standards/issues/55">#55</a>: [Feature Request]: Add check for whitespace after type casting
+- <a href="https://github.com/inpsyde/composer-asset-compiler/issues/13">#13</a>: [Feature Request]: Allow custom config file
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
