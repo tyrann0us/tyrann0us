@@ -4,9 +4,9 @@
 
 Commits:
 
-- <a href="https://github.com/tyrann0us/tyrann0us/commit/445f27874e5c0db5ebfe891d8feb6541204e82aa">445f278</a>: chore: add badges
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium-Common/commit/f33ce6932d3eee245eff6cb83634396946b17d40">f33ce69</a>: chore: add dev branch to QA workflow branches
 
-https://github.com/my-badges/my-badges
+Also, align matrix variables with other workflows.
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
