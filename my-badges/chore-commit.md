@@ -4,9 +4,9 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium-Common/commit/f33ce6932d3eee245eff6cb83634396946b17d40">f33ce69</a>: chore: add dev branch to QA workflow branches
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/8e7de498d66511f30e83d30fbbf52be1dd403965">8e7de49</a>: chore: update rrze/fau-studium-common
 
-Also, align matrix variables with other workflows.
+Jira: FAU-422
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

@@ -45,7 +45,7 @@
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium-Common/commit/f33ce6932d3eee245eff6cb83634396946b17d40\">f33ce69</a>: chore: add dev branch to QA workflow branches\n\nAlso, align matrix variables with other workflows.",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/8e7de498d66511f30e83d30fbbf52be1dd403965\">8e7de49</a>: chore: update rrze/fau-studium-common\n\nJira: FAU-422",
     "image": "https://github.com/my-badges/my-badges/blob/master/src/all-badges/chore-commit/chore-commit.png?raw=true"
   },
   {
@@ -122,7 +122,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"to\".",
-    "body": "My favorite commit message words are:\n\n1. to (used 59 times)\n2. in (used 40 times)\n3. fixes (used 36 times)\n4. added (used 33 times)\n5. readme.txt (used 31 times)",
+    "body": "My favorite commit message words are:\n\n1. to (used 59 times)\n2. in (used 42 times)\n3. fixes (used 38 times)\n4. added (used 33 times)\n5. readme.txt (used 31 times)",
     "image": "https://github.com/my-badges/my-badges/blob/master/src/all-badges/favorite-word/favorite-word.png?raw=true"
   },
   {
