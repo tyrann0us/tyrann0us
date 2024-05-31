@@ -4,8 +4,8 @@
 
 Commits:
 
-- <a href="https://github.com/tyrann0us/slick-slider/commit/2c353dae78754f67eaea23db31a3b0308fb33360">2c353da</a>: Fixed a bug that prevented numeric values to update properly in gallery mode
-- <a href="https://github.com/tyrann0us/slick-slider/commit/e571d38c80ceab068e5f775fe2ee277e011a66ba">e571d38</a>: Fixed bug in readme.txt
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/c71880043fbde8e5e399f969b2fe6019dc06abcb">c718800</a>: fix: update translation files
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/eb6bcb69ec14684b496027de343f0e5d58738b45">eb6bcb6</a>: fix: remove obsolete files
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

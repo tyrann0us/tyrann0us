@@ -4,9 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/8e7de498d66511f30e83d30fbbf52be1dd403965">8e7de49</a>: chore: update rrze/fau-studium-common
-
-Jira: FAU-422
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/03d2b97923b1bdc3f7bfde8e03b8238e559323eb">03d2b97</a>: chore: update Psalm baseline
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
