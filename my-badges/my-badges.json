@@ -45,7 +45,7 @@
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/4c0c23e0ec0d65594e6a9c8f15074988ef0bcd4e\">4c0c23e</a>: chore: update packages",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/3c7903d0afd0c865dc10605b836a732ffe7cc663\">3c7903d</a>: chore: bump version number (2.0.0)",
     "image": "https://github.com/my-badges/my-badges/blob/master/src/all-badges/chore-commit/chore-commit.png?raw=true"
   },
   {
