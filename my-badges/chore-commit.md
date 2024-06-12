@@ -4,7 +4,11 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/3c7903d0afd0c865dc10605b836a732ffe7cc663">3c7903d</a>: chore: bump version number (2.0.0)
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/4a46f0ca41ac768aef8d1815b29db77daf0f5454">4a46f0c</a>: chore: version bump
+
+Let's see if the client's updater will take this as newer …
+
+Jira: FAU-425
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
