@@ -45,7 +45,7 @@
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/4a46f0ca41ac768aef8d1815b29db77daf0f5454\">4a46f0c</a>: chore: version bump\n\nLet's see if the client's updater will take this as newer …\n\nJira: FAU-425",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/225e97d8c69e5e45004d0aea87d2a019dcb2c4a9\">225e97d</a>: chore: version bump",
     "image": "https://github.com/my-badges/my-badges/blob/master/src/all-badges/chore-commit/chore-commit.png?raw=true"
   },
   {
