@@ -34,12 +34,12 @@ jobs:
       #    echo "  IdentityFile private_key.pem" >> ~/.ssh/config
       #    echo "  StrictHostKeyChecking no" >> ~/.ssh/config
 
-      #- name: Fetch latest version from changelog
-      #  id: fetch_version
-      #  run: |
-      #    latest_version=$(curl -sL "https://theeventscalendar.com/category/release-notes/events-calendar-pro/" | grep -oP 'Events Calendar Pro \K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
-      #    echo "Latest version: $latest_version"
-      #    echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
+      - name: Fetch latest version from changelog
+        id: fetch_version
+        run: |
+          latest_version=$(curl -sL "https://theeventscalendar.com/category/release-notes/events-calendar-pro/" | grep -oP 'Events Calendar Pro \K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          echo "Latest version: $latest_version"
+          echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
 
       #- name: Fetch installed plugin version using REST API
       #  id: fetch_installed_version
