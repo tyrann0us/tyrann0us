@@ -8,57 +8,67 @@ on:
 jobs:
   check_and_update_plugin:
     runs-on: ubuntu-latest
+    env:
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      PLUGIN_PATH: "/path/to/upload/"
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Setup SSH agent and environment
+        run: |
+          echo "${SSH_PRIVATE_KEY}" > private_key.pem
+          chmod 600 private_key.pem
+          eval $(ssh-agent -s)
+          ssh-add private_key.pem
+          echo "Host remote_host" > ~/.ssh/config
+          echo "  HostName ${SSH_HOST}" >> ~/.ssh/config
+          echo "  User ${SSH_USER}" >> ~/.ssh/config
+          echo "  IdentityFile private_key.pem" >> ~/.ssh/config
+          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
 
       - name: Fetch latest version from changelog
         id: fetch_version
         run: |
           latest_version=$(curl -sL "https://theeventscalendar.com/category/release-notes/events-calendar-pro/" | grep -oP 'Events Calendar Pro \K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
           echo "Latest version: $latest_version"
-          echo "::set-output name=latest_version::$latest_version"
+          echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
 
       #- name: Fetch installed plugin version using WP-CLI
       #  id: fetch_installed_version
-      #  env:
-      #    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #    SSH_CREDENTIALS ${{ secrets.SSH_CREDENTIALS }}
       #  run: |
-      #    echo "${SSH_PRIVATE_KEY}" > private_key.pem
-      #    chmod 600 private_key.pem
-      #    installed_version=$(ssh -i private_key.pem ${SSH_CREDENTIALS} "wp plugin get events-calendar-pro --field=version")
+      #    installed_version=$(ssh remote_host "wp plugin get events-calendar-pro --field=version")
       #    echo "Installed version: $installed_version"
-      #    echo "::set-output name=installed_version::$installed_version"
-      #    rm private_key.pem
+      #    echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
 
       #- name: Compare versions
-      #  id: compare_versions
       #  run: |
-      #    if [ "${{ steps.fetch_version.outputs.latest_version }}" = "${{ steps.fetch_installed_version.outputs.installed_version }}" ]; then
+      #    if [ "${{ env.LATEST_VERSION }}" = "${{ env.INSTALLED_VERSION }}" ]; then
       #      echo "Versions are identical. Exiting."
       #      exit 0
       #    else
-      #      echo "New version found: ${{ steps.fetch_version.outputs.latest_version }}. Proceeding with update."
+      #      echo "New version found: ${{ env.LATEST_VERSION }}. Proceeding with update."
       #    fi
 
       - name: Search for new plugin version on GitHub
         id: github_search
         run: |
-          search_results=$(curl -s "https://api.github.com/search/code?q=path:events-calendar-pro/events-calendar-pro.php+language:php+\"Version: ${{ steps.fetch_version.outputs.latest_version }}\"" | jq -r '.items[0].repository.html_url')
+          search_results=$(curl -s "https://api.github.com/search/code?q=path:events-calendar-pro/events-calendar-pro.php+language:php+\"Version: ${{ env.LATEST_VERSION }}\"" | jq -r '.items[0].repository.html_url')
           if [ -z "$search_results" ]; then
             echo "No matching version found on GitHub. Exiting."
             exit 0
           else
             echo "Found repository: $search_results"
-            echo "::set-output name=repo_url::$search_results"
+            echo "REPO_URL=$search_results" >> $GITHUB_ENV
           fi
 
       - name: Download plugin folder from GitHub
         run: |
-          repo_url=${{ steps.github_search.outputs.repo_url }}
-          git clone --depth 1 "$repo_url"
-          repo_name=$(basename "$repo_url")
+          git clone --depth 1 "${{ env.REPO_URL }}"
+          repo_name=$(basename "${{ env.REPO_URL }}")
           mv "$repo_name" events-calendar-pro
 
       - name: Remove PUE directory
@@ -75,25 +85,13 @@ jobs:
           zip -r events-calendar-pro.zip events-calendar-pro
           echo "Plugin zipped."
 
-      - name: Upload ZIP file as artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: events-calendar-pro
-          path: events-calendar-pro.zip
-
-      #- name: Deploy new plugin version via SSH
-      #  env:
-      #    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      #    SSH_CREDENTIALS ${{ secrets.SSH_CREDENTIALS }}
+      #- name: Upload and install new plugin version via SSH
       #  run: |
-      #    echo "${SSH_PRIVATE_KEY}" > private_key.pem
-      #    chmod 600 private_key.pem
-      #    scp -i private_key.pem events-calendar-pro.zip ${SSH_CREDENTIALS}:/path/to/upload/
-      #    ssh -i private_key.pem ${SSH_CREDENTIALS} "wp plugin install /path/to/upload/events-calendar-pro.zip --force"
-      #    rm private_key.pem
+      #    scp events-calendar-pro.zip remote_host:$PLUGIN_PATH
+      #    ssh remote_host "wp plugin install $PLUGIN_PATH/events-calendar-pro.zip --force"
       #    echo "Plugin installed."
 
       - name: Cleanup
         run: |
-          rm -rf events-calendar-pro events-calendar-pro.zip
+          rm -rf events-calendar-pro events-calendar-pro.zip private_key.pem
           echo "Cleanup complete."
