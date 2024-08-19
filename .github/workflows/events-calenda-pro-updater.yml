@@ -45,7 +45,13 @@ jobs:
         id: fetch_installed_version
         run: |
           auth=$(echo -n "${WP_USERNAME}:${WP_APPLICATION_PASSWORD}" | base64)
-          installed_version=$(curl -s -H "Authorization: Basic $auth" "${WP_API_URL}" | jq -r '.[] | select(.plugin == "events-calendar-pro/events-calendar-pro.php") | .version')
+          response=$(curl -s -H "Authorization: Basic $auth" "${WP_API_URL}")
+          echo "Response from API: $response"  # Debugging output to see what the API returns
+          installed_version=$(echo "$response" | jq -r '.[] | select(.plugin == "events-calendar-pro/events-calendar-pro.php") | .version')
+          if [ -z "$installed_version" ]; then
+            echo "Error: Unable to fetch installed version. Exiting."
+            exit 1
+          fi
           echo "Installed version: $installed_version"
           echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
 
