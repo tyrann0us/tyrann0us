@@ -60,23 +60,35 @@ jobs:
       - name: Compare versions
         run: |
           if [ "${{ env.LATEST_VERSION }}" = "${{ env.INSTALLED_VERSION }}" ]; then
-            echo "Versions are identical. Exiting."
-            exit 0
+            echo "Versions are identical."
           else
             echo "New version found: ${{ env.LATEST_VERSION }}. Proceeding with update."
           fi
 
       - name: Search for new plugin version on GitHub
-        id: github_search
-        run: |
-          search_results=$(curl -s "https://api.github.com/search/code?q=path:events-calendar-pro/events-calendar-pro.php+language:php+\"Version: ${{ env.LATEST_VERSION }}\"" | jq -r '.items[0].repository.html_url')
-          if [ -z "$search_results" ]; then
-            echo "No matching version found on GitHub. Exiting."
-            exit 0
-          else
-            echo "Found repository: $search_results"
-            echo "REPO_URL=$search_results" >> $GITHUB_ENV
-          fi
+        uses: actions/github-script@v6
+        id: search_plugin
+        with:
+          script: |
+            const response = await github.rest.search.code({
+              q: `path:events-calendar-pro/events-calendar-pro.php language:php "Version: ${process.env.LATEST_VERSION}"`
+            });
+            const repoUrl = response.data.items.length > 0 ? response.data.items[0].repository.html_url : null;
+            if (repoUrl) {
+              console.log(`Found repository: ${repoUrl}`);
+              return { repo_url: repoUrl };
+            } else {
+              console.log("No matching version found on GitHub.");
+              return { repo_url: null };
+            }
+          result-encoding: string
+        env:
+          LATEST_VERSION: ${{ env.LATEST_VERSION }}
+
+      - name: Set REPO_URL
+        if: steps.search_plugin.outputs.repo_url != ''
+        run: echo "REPO_URL=${{ steps.search_plugin.outputs.repo_url }}" >> $GITHUB_ENV
+
 
       - name: Download plugin folder from GitHub
         run: |
