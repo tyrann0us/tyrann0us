@@ -71,7 +71,7 @@ jobs:
         with:
           script: |
             const response = await github.rest.search.code({
-              q: `path:events-calendar-pro/events-calendar-pro.php+language:php+"Version: ${process.env.LATEST_VERSION}"`
+              q: `path:events-calendar-pro/events-calendar-pro.php+language:php+"Version: 7.0.1"`
             });
             console.log(response);
             const repoUrl = response.data.items.length > 0 ? response.data.items[0].repository.html_url : null;
