@@ -21,49 +21,49 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup SSH agent and environment
-        run: |
-          mkdir -p ~/.ssh  # Create the .ssh directory if it doesn't exist
-          echo "${SSH_PRIVATE_KEY}" > private_key.pem
-          chmod 600 private_key.pem
-          eval $(ssh-agent -s)
-          ssh-add private_key.pem
-          echo "Host remote_host" > ~/.ssh/config
-          echo "  HostName ${SSH_HOST}" >> ~/.ssh/config
-          echo "  User ${SSH_USER}" >> ~/.ssh/config
-          echo "  IdentityFile private_key.pem" >> ~/.ssh/config
-          echo "  StrictHostKeyChecking no" >> ~/.ssh/config
+      #- name: Setup SSH agent and environment
+      #  run: |
+      #    mkdir -p ~/.ssh  # Create the .ssh directory if it doesn't exist
+      #    echo "${SSH_PRIVATE_KEY}" > private_key.pem
+      #    chmod 600 private_key.pem
+      #    eval $(ssh-agent -s)
+      #    ssh-add private_key.pem
+      #    echo "Host remote_host" > ~/.ssh/config
+      #    echo "  HostName ${SSH_HOST}" >> ~/.ssh/config
+      #    echo "  User ${SSH_USER}" >> ~/.ssh/config
+      #    echo "  IdentityFile private_key.pem" >> ~/.ssh/config
+      #    echo "  StrictHostKeyChecking no" >> ~/.ssh/config
 
-      - name: Fetch latest version from changelog
-        id: fetch_version
-        run: |
-          latest_version=$(curl -sL "https://theeventscalendar.com/category/release-notes/events-calendar-pro/" | grep -oP 'Events Calendar Pro \K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
-          echo "Latest version: $latest_version"
-          echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
+      #- name: Fetch latest version from changelog
+      #  id: fetch_version
+      #  run: |
+      #    latest_version=$(curl -sL "https://theeventscalendar.com/category/release-notes/events-calendar-pro/" | grep -oP 'Events Calendar Pro \K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+      #    echo "Latest version: $latest_version"
+      #    echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
 
-      - name: Fetch installed plugin version using REST API
-        id: fetch_installed_version
-        run: |
-          auth=$(echo -n "${WP_USERNAME}:${WP_APPLICATION_PASSWORD}" | base64)
-          api_url="${WP_API_URL}/events-calendar-pro/events-calendar-pro"
-          response=$(curl -s -H "Authorization: Basic $auth" "$api_url")
-          echo "URL: $api_url"  # Debugging output to see what the API returns
-          echo "Response from API: $response"
-          installed_version=$(echo "$response" | jq -r '.version')
-          if [ -z "$installed_version" ]; then
-            echo "Error: Unable to fetch installed version. Exiting."
-            exit 1
-          fi
-          echo "Installed version: $installed_version"
-          echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
+      #- name: Fetch installed plugin version using REST API
+      #  id: fetch_installed_version
+      #  run: |
+      #    auth=$(echo -n "${WP_USERNAME}:${WP_APPLICATION_PASSWORD}" | base64)
+      #    api_url="${WP_API_URL}/events-calendar-pro/events-calendar-pro"
+      #    response=$(curl -s -H "Authorization: Basic $auth" "$api_url")
+      #    echo "URL: $api_url"  # Debugging output to see what the API returns
+      #    echo "Response from API: $response"
+      #    installed_version=$(echo "$response" | jq -r '.version')
+      #    if [ -z "$installed_version" ]; then
+      #      echo "Error: Unable to fetch installed version. Exiting."
+      #      exit 1
+      #    fi
+      #    echo "Installed version: $installed_version"
+      #    echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
 
-      - name: Compare versions
-        run: |
-          if [ "${{ env.LATEST_VERSION }}" = "${{ env.INSTALLED_VERSION }}" ]; then
-            echo "Versions are identical."
-          else
-            echo "New version found: ${{ env.LATEST_VERSION }}. Proceeding with update."
-          fi
+      #- name: Compare versions
+      #  run: |
+      #    if [ "${{ env.LATEST_VERSION }}" = "${{ env.INSTALLED_VERSION }}" ]; then
+      #      echo "Versions are identical."
+      #    else
+      #      echo "New version found: ${{ env.LATEST_VERSION }}. Proceeding with update."
+      #    fi
 
       - name: Search for new plugin version on GitHub
         uses: actions/github-script@v6
@@ -71,8 +71,9 @@ jobs:
         with:
           script: |
             const response = await github.rest.search.code({
-              q: `path:events-calendar-pro/events-calendar-pro.php language:php "Version: ${process.env.LATEST_VERSION}"`
+              q: `path:events-calendar-pro/events-calendar-pro.php+language:php+"Version: ${process.env.LATEST_VERSION}"`
             });
+            console.log(response);
             const repoUrl = response.data.items.length > 0 ? response.data.items[0].repository.html_url : null;
             if (repoUrl) {
               console.log(`Found repository: ${repoUrl}`);
