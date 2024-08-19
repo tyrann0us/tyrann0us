@@ -20,6 +20,7 @@ jobs:
 
       - name: Setup SSH agent and environment
         run: |
+          mkdir -p ~/.ssh  # Create the .ssh directory if it doesn't exist
           echo "${SSH_PRIVATE_KEY}" > private_key.pem
           chmod 600 private_key.pem
           eval $(ssh-agent -s)
@@ -37,21 +38,21 @@ jobs:
           echo "Latest version: $latest_version"
           echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
 
-      #- name: Fetch installed plugin version using WP-CLI
-      #  id: fetch_installed_version
-      #  run: |
-      #    installed_version=$(ssh remote_host "wp plugin get events-calendar-pro --field=version")
-      #    echo "Installed version: $installed_version"
-      #    echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
+      - name: Fetch installed plugin version using WP-CLI
+        id: fetch_installed_version
+        run: |
+          installed_version=$(ssh remote_host "wp plugin get events-calendar-pro --field=version")
+          echo "Installed version: $installed_version"
+          echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
 
-      #- name: Compare versions
-      #  run: |
-      #    if [ "${{ env.LATEST_VERSION }}" = "${{ env.INSTALLED_VERSION }}" ]; then
-      #      echo "Versions are identical. Exiting."
-      #      exit 0
-      #    else
-      #      echo "New version found: ${{ env.LATEST_VERSION }}. Proceeding with update."
-      #    fi
+      - name: Compare versions
+        run: |
+          if [ "${{ env.LATEST_VERSION }}" = "${{ env.INSTALLED_VERSION }}" ]; then
+            echo "Versions are identical. Exiting."
+            exit 0
+          else
+            echo "New version found: ${{ env.LATEST_VERSION }}. Proceeding with update."
+          fi
 
       - name: Search for new plugin version on GitHub
         id: github_search
@@ -85,11 +86,11 @@ jobs:
           zip -r events-calendar-pro.zip events-calendar-pro
           echo "Plugin zipped."
 
-      #- name: Upload and install new plugin version via SSH
-      #  run: |
-      #    scp events-calendar-pro.zip remote_host:$PLUGIN_PATH
-      #    ssh remote_host "wp plugin install $PLUGIN_PATH/events-calendar-pro.zip --force"
-      #    echo "Plugin installed."
+      - name: Upload and install new plugin version via SSH
+        run: |
+          scp events-calendar-pro.zip remote_host:$PLUGIN_PATH
+          ssh remote_host "wp plugin install $PLUGIN_PATH/events-calendar-pro.zip --force"
+          echo "Plugin installed."
 
       - name: Cleanup
         run: |
