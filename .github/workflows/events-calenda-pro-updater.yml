@@ -75,6 +75,7 @@ jobs:
             const response = await github.rest.search.code({
               q: query
             });
+            console.log(query, resonse);
             const repoUrl = response.data.items.length > 0 ? response.data.items[0].repository.html_url : null;
             if (repoUrl) {
               console.log(`Found repository: ${repoUrl}`);
