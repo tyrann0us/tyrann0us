@@ -12,6 +12,9 @@ jobs:
       SSH_USER: ${{ secrets.SSH_USER }}
       SSH_HOST: ${{ secrets.SSH_HOST }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      WP_API_URL: "https://${{ secrets.SSH_HOST }}/wp-json/wp/v2/plugins"
+      WP_USERNAME: ${{ secrets.WP_USERNAME }}
+      WP_APPLICATION_PASSWORD: ${{ secrets.WP_APPLICATION_PASSWORD }}
       PLUGIN_PATH: "/path/to/upload/"
 
     steps:
@@ -38,10 +41,11 @@ jobs:
           echo "Latest version: $latest_version"
           echo "LATEST_VERSION=$latest_version" >> $GITHUB_ENV
 
-      - name: Fetch installed plugin version using WP-CLI
+      - name: Fetch installed plugin version using REST API
         id: fetch_installed_version
         run: |
-          installed_version=$(ssh remote_host "wp plugin get events-calendar-pro --field=version")
+          auth=$(echo -n "${WP_USERNAME}:${WP_APPLICATION_PASSWORD}" | base64)
+          installed_version=$(curl -s -H "Authorization: Basic $auth" "${WP_API_URL}" | jq -r '.[] | select(.plugin == "events-calendar-pro/events-calendar-pro.php") | .version')
           echo "Installed version: $installed_version"
           echo "INSTALLED_VERSION=$installed_version" >> $GITHUB_ENV
 
@@ -89,7 +93,7 @@ jobs:
       - name: Upload and install new plugin version via SSH
         run: |
           scp events-calendar-pro.zip remote_host:$PLUGIN_PATH
-          ssh remote_host "wp plugin install $PLUGIN_PATH/events-calendar-pro.zip --force"
+          ssh remote_host "unzip -o $PLUGIN_PATH/events-calendar-pro.zip -d /path/to/wordpress/wp-content/plugins/"
           echo "Plugin installed."
 
       - name: Cleanup
