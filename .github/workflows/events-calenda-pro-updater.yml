@@ -70,10 +70,11 @@ jobs:
         id: search_plugin
         with:
           script: |
+            const version = process.env.LATEST_VERSION;
+            const query = `path:events-calendar-pro/events-calendar-pro.php language:php "Version: ${version}"`;
             const response = await github.rest.search.code({
-              q: `path:events-calendar-pro/events-calendar-pro.php+language:php+"Version: 7.0.1"`
+              q: query
             });
-            console.log(response);
             const repoUrl = response.data.items.length > 0 ? response.data.items[0].repository.html_url : null;
             if (repoUrl) {
               console.log(`Found repository: ${repoUrl}`);
@@ -85,6 +86,7 @@ jobs:
           result-encoding: string
         env:
           LATEST_VERSION: ${{ env.LATEST_VERSION }}
+
 
       - name: Set REPO_URL
         if: steps.search_plugin.outputs.repo_url != ''
