@@ -70,7 +70,7 @@ jobs:
         id: search_plugin
         with:
           script: |
-            const query = encodeURIComponent(`in:events-calendar-pro.php language:php "Version: ${process.env.LATEST_VERSION}"`);
+            const query = encodeURIComponent(`language:php Plugin Name: The Events Calendar Pro Version: ${process.env.LATEST_VERSION}`);
             console.log(query);
             const response = await github.rest.search.code({
               q: `in:events-calendar-pro.php+language:php+"Version: ${process.env.LATEST_VERSION}"`
