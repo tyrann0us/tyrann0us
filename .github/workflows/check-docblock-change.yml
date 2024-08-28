@@ -1,0 +1,58 @@
+name: Check DocBlock for create() Method in Site_Command.php
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs weekly at midnight on Sunday
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  check-docblock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get the latest DocBlock from wp-cli/entity-command
+        run: |
+          curl -s https://raw.githubusercontent.com/wp-cli/entity-command/main/src/Site_Command.php > Site_Command.php
+          sed -n '/\/\*\*/,/\*\//p' Site_Command.php | sed -n '/function create/,/\*\//p' > current_docblock.txt
+
+      - name: Check if the previous DocBlock exists
+        id: check-previous
+        run: echo "exists=$(test -f .github/last_docblock.txt && echo true || echo false)" >> $GITHUB_ENV
+
+      - name: Save current DocBlock if first run
+        if: env.exists == 'false'
+        run: |
+          mkdir -p .github
+          cp current_docblock.txt .github/last_docblock.txt
+          echo "First run - saving current DocBlock for future comparisons."
+
+      - name: Compare DocBlocks
+        if: env.exists == 'true'
+        run: |
+          diff -u .github/last_docblock.txt current_docblock.txt > docblock_diff.txt || true
+          if [ -s docblock_diff.txt ]; then
+            echo "DocBlock has changed!"
+            cp current_docblock.txt .github/last_docblock.txt
+          else
+            echo "No changes detected."
+            echo "no_changes=true" >> $GITHUB_ENV
+          fi
+
+      - name: Create GitHub issue if DocBlock has changed
+        if: env.no_changes != 'true'
+        uses: peter-evans/create-issue-from-file@v4
+        with:
+          title: "DocBlock for create() Method has changed in Site_Command.php"
+          content-filepath: docblock_diff.txt
+          labels: "documentation, alert"
+
+      - name: Commit the updated DocBlock for future checks
+        if: env.no_changes != 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/last_docblock.txt
+          git commit -m "Update last checked DocBlock for create() method"
+          git push
