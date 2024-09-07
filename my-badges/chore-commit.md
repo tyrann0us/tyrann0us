@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/1fa63b3a87e8237d8dde94954f477d34dbf7bb31">1fa63b3</a>: chore: version bump (2.1.0-beta.1)
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/b323d01beaeef70156f8fa1668b42e67e254647d">b323d01</a>: chore: version bump (2.1.0)
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
