@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/1bab390abc977bcc17db0a1ea764dc0b635e6640">1bab390</a>
+- <a href="https://github.com/tyrann0us/slick-slider/commit/d600a302396b198090699b438deb0726272c8f34">d600a30</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
