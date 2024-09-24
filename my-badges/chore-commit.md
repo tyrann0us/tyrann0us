@@ -4,9 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/tyrann0us/tyrann0us/commit/445f27874e5c0db5ebfe891d8feb6541204e82aa">445f278</a>: chore: add badges
-
-https://github.com/my-badges/my-badges
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/b323d01beaeef70156f8fa1668b42e67e254647d">b323d01</a>: chore: version bump (2.1.0)
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

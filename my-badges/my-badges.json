@@ -24,7 +24,7 @@
     "id": "mass-delete-commit",
     "tier": 1,
     "desc": "When I delete code, I delete a lot.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/d600a302396b198090699b438deb0726272c8f34\">d600a30</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/1bab390abc977bcc17db0a1ea764dc0b635e6640\">1bab390</a>",
     "image": "https://my-badges.github.io/my-badges/mass-delete-commit.png"
   },
   {
@@ -38,14 +38,14 @@
     "id": "fix-2",
     "tier": 1,
     "desc": "I did 2 sequential fixes.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/2c353dae78754f67eaea23db31a3b0308fb33360\">2c353da</a>: Fixed a bug that prevented numeric values to update properly in gallery mode\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/e571d38c80ceab068e5f775fe2ee277e011a66ba\">e571d38</a>: Fixed bug in readme.txt",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/c71880043fbde8e5e399f969b2fe6019dc06abcb\">c718800</a>: fix: update translation files\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/eb6bcb69ec14684b496027de343f0e5d58738b45\">eb6bcb6</a>: fix: remove obsolete files",
     "image": "https://my-badges.github.io/my-badges/fix-2.png"
   },
   {
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/tyrann0us/tyrann0us/commit/445f27874e5c0db5ebfe891d8feb6541204e82aa\">445f278</a>: chore: add badges\n\nhttps://github.com/my-badges/my-badges",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/b323d01beaeef70156f8fa1668b42e67e254647d\">b323d01</a>: chore: version bump (2.1.0)",
     "image": "https://my-badges.github.io/my-badges/chore-commit.png"
   },
   {
@@ -122,7 +122,7 @@
     "id": "favorite-word",
     "tier": 0,
     "desc": "My favorite word is \"to\".",
-    "body": "My favorite commit message words are:\n\n1. to (used 53 times)\n2. fixes (used 36 times)\n3. in (used 36 times)\n4. added (used 33 times)\n5. readme.txt (used 31 times)",
+    "body": "My favorite commit message words are:\n\n1. to (used 59 times)\n2. in (used 45 times)\n3. fixes (used 38 times)\n4. update (used 37 times)\n5. added (used 33 times)",
     "image": "https://my-badges.github.io/my-badges/favorite-word.png"
   },
   {
