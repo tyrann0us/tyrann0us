@@ -3,7 +3,6 @@
 <br><br>
 
 - <a href="https://github.com/tyrann0us/slick-slider/issues/42">#42</a>
-- <a href="https://github.com/zgordon/gutenberg-course/issues/42">#42</a>
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
