@@ -26,5 +26,6 @@
 <a href="my-badges/fix-3.md"><img src="https://my-badges.github.io/my-badges/fix-3.png" alt="I did 3 sequential fixes." title="I did 3 sequential fixes." width="64"></a>
 <a href="my-badges/github-anniversary-10.md"><img src="https://my-badges.github.io/my-badges/github-anniversary-10.png" alt="I joined GitHub 10 years ago." title="I joined GitHub 10 years ago." width="64"></a>
 <a href="my-badges/spooky-commit.md"><img src="https://my-badges.github.io/my-badges/spooky-commit.png" alt="I committed on the Halloween! Boo!" title="I committed on the Halloween! Boo!" width="64"></a>
+<a href="my-badges/thumbs-up.md"><img src="https://my-badges.github.io/my-badges/thumbs-up.png" alt="I have received a lot of thumbs up 👍 reactions!" title="I have received a lot of thumbs up 👍 reactions!" width="64"></a>
 <!-- my-badges end -->
 
