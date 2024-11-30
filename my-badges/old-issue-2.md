@@ -5,7 +5,6 @@
 Issues:
 
 - <a href="https://github.com/TimPerry/acf-post-type-selector/issues/15">#15</a>: Add for attribut to labels and id attribut to inputs
-- <a href="https://github.com/inpsyde/php-coding-standards/issues/50">#50</a>: [Feature Request]: Add check for Emacs UTF-8 file header
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>
