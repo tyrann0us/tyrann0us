@@ -166,5 +166,12 @@
     "desc": "I have received a lot of thumbs up 👍 reactions!",
     "body": "- [46 thumbs ups](https://github.com/postmanlabs/postman-app-support/issues/5294#issuecomment-446903374)\n- [32 thumbs ups](https://github.com/fullcalendar/fullcalendar/issues/2919#issuecomment-273723251)\n- [18 thumbs ups](https://github.com/kenwheeler/slick/issues/2594#issuecomment-259414866)\n- [14 thumbs ups](https://github.com/kenwheeler/slick/issues/974#issuecomment-250088735)\n- [12 thumbs ups](https://github.com/actions/runner-images/issues/1924#issuecomment-719628330)\n- [10 thumbs ups](https://github.com/woocommerce/woocommerce/issues/18395#issuecomment-850208412)\n- [9 thumbs ups](https://github.com/wp-media/wp-rocket/issues/741#issuecomment-411778083)\n- [6 thumbs ups](https://github.com/dependabot/dependabot-core/issues/5017)\n- [6 thumbs ups](https://github.com/Automattic/wp-memcached/issues/112)\n- [6 thumbs ups](https://github.com/igorshubovych/markdownlint-cli/pull/460)",
     "image": "https://my-badges.github.io/my-badges/thumbs-up.png"
+  },
+  {
+    "id": "thumbs-up-10",
+    "tier": 1,
+    "desc": "I got more than 10 thumbs up.",
+    "body": "* <a href=\"https://github.com/postmanlabs/postman-app-support/issues/5294#issuecomment-446903374\">46 👍</a>\n* <a href=\"https://github.com/fullcalendar/fullcalendar/issues/2919#issuecomment-273723251\">32 👍</a>\n* <a href=\"https://github.com/kenwheeler/slick/issues/2594#issuecomment-259414866\">18 👍</a>\n* <a href=\"https://github.com/kenwheeler/slick/issues/974#issuecomment-250088735\">14 👍</a>\n* <a href=\"https://github.com/actions/runner-images/issues/1924#issuecomment-719628330\">12 👍</a>",
+    "image": "https://my-badges.github.io/my-badges/thumbs-up-10.png"
   }
 ]
