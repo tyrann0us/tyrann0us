@@ -4,7 +4,7 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/b323d01beaeef70156f8fa1668b42e67e254647d">b323d01</a>: chore: version bump (2.1.0)
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium-Common/commit/03f22c948ed6131f3f17b768425ee9c74cfa76a5">03f22c9</a>: chore: update Psalm baseline
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

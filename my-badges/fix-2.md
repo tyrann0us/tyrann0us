@@ -4,8 +4,8 @@
 
 Commits:
 
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/c71880043fbde8e5e399f969b2fe6019dc06abcb">c718800</a>: fix: update translation files
-- <a href="https://github.com/RRZE-Webteam/FAU-Studium/commit/eb6bcb69ec14684b496027de343f0e5d58738b45">eb6bcb6</a>: fix: remove obsolete files
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium-Embed/commit/c0133e2cd1d7ea601aa76fce732e1d17207e9cb8">c0133e2</a>: fix: update translation files
+- <a href="https://github.com/RRZE-Webteam/FAU-Studium-Embed/commit/62babc70c07cd960a3348e7cf221f51d3c0b4f3e">62babc7</a>: fix: remove obsolete files
 
 
 Created by <a href="https://github.com/my-badges/my-badges">My Badges</a>

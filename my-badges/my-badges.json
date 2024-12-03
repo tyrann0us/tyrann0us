@@ -24,7 +24,7 @@
     "id": "mass-delete-commit",
     "tier": 1,
     "desc": "When I delete code, I delete a lot.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/1bab390abc977bcc17db0a1ea764dc0b635e6640\">1bab390</a>",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium-Embed/commit/62babc70c07cd960a3348e7cf221f51d3c0b4f3e\">62babc7</a>",
     "image": "https://my-badges.github.io/my-badges/mass-delete-commit.png"
   },
   {
@@ -38,14 +38,14 @@
     "id": "fix-2",
     "tier": 1,
     "desc": "I did 2 sequential fixes.",
-    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/c71880043fbde8e5e399f969b2fe6019dc06abcb\">c718800</a>: fix: update translation files\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/eb6bcb69ec14684b496027de343f0e5d58738b45\">eb6bcb6</a>: fix: remove obsolete files",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium-Embed/commit/c0133e2cd1d7ea601aa76fce732e1d17207e9cb8\">c0133e2</a>: fix: update translation files\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium-Embed/commit/62babc70c07cd960a3348e7cf221f51d3c0b4f3e\">62babc7</a>: fix: remove obsolete files",
     "image": "https://my-badges.github.io/my-badges/fix-2.png"
   },
   {
     "id": "chore-commit",
     "tier": 0,
     "desc": "I did a little housekeeping! 🧹",
-    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium/commit/b323d01beaeef70156f8fa1668b42e67e254647d\">b323d01</a>: chore: version bump (2.1.0)",
+    "body": "Commits:\n\n- <a href=\"https://github.com/RRZE-Webteam/FAU-Studium-Common/commit/03f22c948ed6131f3f17b768425ee9c74cfa76a5\">03f22c9</a>: chore: update Psalm baseline",
     "image": "https://my-badges.github.io/my-badges/chore-commit.png"
   },
   {
@@ -68,48 +68,6 @@
     "desc": "I have one public key",
     "body": "",
     "image": "https://my-badges.github.io/my-badges/public-keys-1.png"
-  },
-  {
-    "id": "old-issue-1",
-    "tier": 1,
-    "desc": "I closed an issue that was open for a year",
-    "body": "Issues:\n\n- <a href=\"https://github.com/nabtron/clearboth/issues/3\">#3</a>: Switch from shortcode to TinyMCE button\n- <a href=\"https://github.com/TimPerry/acf-post-type-selector/issues/19\">#19</a>: Transfer ownership?\n- <a href=\"https://github.com/brightnucleus/custom-content/issues/9\">#9</a>: German translation differ from core\n- <a href=\"https://github.com/ahmedkaludi/easy-table-of-contents/issues/129\">#129</a>: Feature request: Add toggle state class to container\n- <a href=\"https://github.com/inpsyde/php-coding-standards/issues/55\">#55</a>: [Feature Request]: Add check for whitespace after type casting\n- <a href=\"https://github.com/inpsyde/composer-asset-compiler/issues/13\">#13</a>: [Feature Request]: Allow custom config file",
-    "image": "https://my-badges.github.io/my-badges/old-issue-1.png"
-  },
-  {
-    "id": "old-issue-2",
-    "tier": 2,
-    "desc": "I closed an issue that was open for 2 years",
-    "body": "Issues:\n\n- <a href=\"https://github.com/TimPerry/acf-post-type-selector/issues/15\">#15</a>: Add for attribut to labels and id attribut to inputs",
-    "image": "https://my-badges.github.io/my-badges/old-issue-2.png"
-  },
-  {
-    "id": "old-issue-3",
-    "tier": 3,
-    "desc": "I closed an issue that was open for 3 years",
-    "body": "Issues:\n\n- <a href=\"https://github.com/trewknowledge/GDPR/issues/202\">#202</a>: Add consent status",
-    "image": "https://my-badges.github.io/my-badges/old-issue-3.png"
-  },
-  {
-    "id": "old-issue-4",
-    "tier": 4,
-    "desc": "I closed an issue that was open for 4 years",
-    "body": "Issues:\n\n- <a href=\"https://github.com/daronspence/acf-widgets/issues/25\">#25</a>: Clone field support\n- <a href=\"https://github.com/geordyjames/google-Invisible-reCAPTCHA/issues/4\">#4</a>: Add Composer support",
-    "image": "https://my-badges.github.io/my-badges/old-issue-4.png"
-  },
-  {
-    "id": "old-issue-5",
-    "tier": 5,
-    "desc": "I closed an issue that was open for 5 years",
-    "body": "Issues:\n\n- <a href=\"https://github.com/tpeigne/simpleresponsivetheme/issues/51\">#51</a>: Compatibility with PrestaShop >= 1.6?",
-    "image": "https://my-badges.github.io/my-badges/old-issue-5.png"
-  },
-  {
-    "id": "old-issue-6",
-    "tier": 6,
-    "desc": "I closed an issue that was open for 6 years",
-    "body": "Issues:\n\n- <a href=\"https://github.com/Strategy11/display-widgets/issues/21\">#21</a>: Suggestion: Check if page has sidebar at all",
-    "image": "https://my-badges.github.io/my-badges/old-issue-6.png"
   },
   {
     "id": "the-ultimate-question",
@@ -159,13 +117,6 @@
     "desc": "I committed on the Halloween! Boo!",
     "body": "Commits:\n\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/0b0714212eebcecbe8613ab117b20ad3c8b917c8\">0b07142</a>\n- <a href=\"https://github.com/tyrann0us/slick-slider/commit/a4efff1c4d6424ebce2d1b2ab6e56e3d5db0eae3\">a4efff1</a>",
     "image": "https://my-badges.github.io/my-badges/spooky-commit.png"
-  },
-  {
-    "id": "thumbs-up",
-    "tier": 0,
-    "desc": "I have received a lot of thumbs up 👍 reactions!",
-    "body": "- [46 thumbs ups](https://github.com/postmanlabs/postman-app-support/issues/5294#issuecomment-446903374)\n- [32 thumbs ups](https://github.com/fullcalendar/fullcalendar/issues/2919#issuecomment-273723251)\n- [18 thumbs ups](https://github.com/kenwheeler/slick/issues/2594#issuecomment-259414866)\n- [14 thumbs ups](https://github.com/kenwheeler/slick/issues/974#issuecomment-250088735)\n- [12 thumbs ups](https://github.com/actions/runner-images/issues/1924#issuecomment-719628330)\n- [10 thumbs ups](https://github.com/woocommerce/woocommerce/issues/18395#issuecomment-850208412)\n- [9 thumbs ups](https://github.com/wp-media/wp-rocket/issues/741#issuecomment-411778083)\n- [6 thumbs ups](https://github.com/dependabot/dependabot-core/issues/5017)\n- [6 thumbs ups](https://github.com/Automattic/wp-memcached/issues/112)\n- [6 thumbs ups](https://github.com/igorshubovych/markdownlint-cli/pull/460)",
-    "image": "https://my-badges.github.io/my-badges/thumbs-up.png"
   },
   {
     "id": "thumbs-up-10",
