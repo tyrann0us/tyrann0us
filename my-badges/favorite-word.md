@@ -4,7 +4,7 @@
 
 My favorite commit message words are:
 
-1. jira: (used 40 times)
+1. jira: (used 44 times)
 2. fixes (used 38 times)
 3. update (used 37 times)
 4. version (used 35 times)
